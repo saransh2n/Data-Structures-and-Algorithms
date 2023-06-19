@@ -1,1 +1,21 @@
-// the code will be done soon...
+void setZeroes(vector<vector<int>>& matrix) {
+    int m = matrix.size();
+    int n = matrix[0].size();
+    vector<int> rowarr(m,1);
+    vector<int> colarr(n,1);
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+           if(matrix[i][j]==0){
+                rowarr[i]=0;
+                colarr[j]=0;  
+            }
+        }
+    }
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+           if((rowarr[i]==0) || (colarr[j]== 0)){
+            matrix[i][j]=0;
+            }
+        }
+    }
+     }
