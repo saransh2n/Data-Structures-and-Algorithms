@@ -1,0 +1,38 @@
+vector<int> majorityElement(vector<int>& nums) {
+    int element1 = -15, element2 = -15;
+    int count1 = 0, count2 = 0;
+    // we traverse a loop and take majority two elements
+    for(int i=0; i<nums.size(); i++){
+        if(count1==0 && element2 != nums[i]){
+            element1 = nums[i];
+            count1 = 1;
+        }
+        else if(element1 == nums[i])
+            count1 ++;
+        
+        else if(count2 == 0 && element1 != nums[i]){
+            element2 = nums[i];
+            count2 = 1;        
+        }
+        else if(element2 == nums[i])
+            count2 ++;
+        else{
+            count1--;
+            count2--;
+        }
+    }
+    int coun1=0;
+    int coun2=0;
+    for(int i=0; i<nums.size(); i++){
+        if(nums[i]==element1)
+            coun1 +=1;
+        if(nums[i]==element2)
+            coun2 += 1;
+    }
+    vector<int> temp;
+    if(coun1 > nums.size()/3)
+        temp.push_back(element1);
+    if(coun2 > nums.size()/3)
+        temp.push_back(element2);
+    return temp;
+  }
