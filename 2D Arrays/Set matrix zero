@@ -1,3 +1,5 @@
+// Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+
 void setZeroes(vector<vector<int>>& matrix) {
     int m = matrix.size();
     int n = matrix[0].size();
